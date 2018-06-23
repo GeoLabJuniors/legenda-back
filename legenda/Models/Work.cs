@@ -10,19 +10,19 @@ namespace legenda.Models
     public class Work
     {
         public int ID { get; set; }
-        public int InitialUserID { get; set; }
+        public int ParticipantID { get; set; }
         public int SeasonID { get; set; }
+
         [Required]
-        [StringLength(50)]
+        [StringLength(100)]
         public string Title { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string Topic { get; set; }
-        [Required]
+
         [StringLength(100)]
         public string Path { get; set; }
 
-        public virtual InitialUser InitialUser { get; set; }
+        public string Text { get; set; }
+
+        public virtual Participant Participant { get; set; }
         public virtual Season Season { get; set; }
 
     }

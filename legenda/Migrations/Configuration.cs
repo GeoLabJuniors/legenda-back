@@ -4,28 +4,36 @@ namespace legenda.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using legenda.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
     internal sealed class Configuration : DbMigrationsConfiguration<legenda.Models.ApplicationDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(legenda.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            context.Contents.AddOrUpdate(
+                p=>p.Name,
+                new Content { Name = "About", Value ="About"},
+                new Content { Name="BrochurePath", Value="Brochure"},
+                new Content { Name="Competition", Value="Competition"},
+                new Content { Name="Contact", Value="Contact"}
+                );
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Roles.AddOrUpdate(
+                p=>p.Name,
+                new IdentityRole { Name="Admin" },
+                new IdentityRole { Name="Jury"  },
+                new IdentityRole { Name="Moderator" },
+                new IdentityRole { Name="User" }
+                );
+
+            context.SaveChanges();
         }
     }
 }

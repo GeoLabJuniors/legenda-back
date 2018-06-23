@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace legenda.Models
 {
     public class Post
     {
         public int ID { get; set; }
-        public int ApplicationUserID { get; set; }
+
+        [ForeignKey("ApplicationUser")]
+        public string ApplicationUserID { get; set; }
         public int? ImageID { get; set; }
         [Required]
         [StringLength(100)]

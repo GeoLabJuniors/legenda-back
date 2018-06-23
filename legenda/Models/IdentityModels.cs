@@ -27,24 +27,21 @@ namespace legenda.Models
         {
         }
 
-        public DbSet<About> Abouts { get; set; }
-        public DbSet<Brochure> Brochures { get; set; }
-        public DbSet<Competition> Competitions { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Image> Images { get; set; }
-        public DbSet<InitialUser> InitialUsers { get; set; }
-        public DbSet<InitialUsersToSeasons> InitialUsersToSeasons { get; set; }
-        public DbSet<JuriesToSeasons> JuriesToSeasons { get; set; }
-        public DbSet<Jury> Juries { get; set; }
+        public DbSet<ParticipantsToSeasons> UsersToSeasons { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Season> Seasons { get; set; }
         public DbSet<SeasonsToImages> SeasonsToImages { get; set; }
-        public DbSet<User> FinalUsers { get; set; }
+        public DbSet<Participant> Participants { get; set; }
         public DbSet<Work> Works { get; set; }
+        public DbSet<Content> Contents { get; set; }
+        public DbSet<ConfirmRole> ConfirmRoles { get; set; }
+        public DbSet<JuriesToSeasons> JuriesToSeasons { get; set; }
 
 
         public static ApplicationDbContext Create()
-        {
+        { 
+            
             return new ApplicationDbContext();
         }
     }

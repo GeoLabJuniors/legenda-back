@@ -15,25 +15,22 @@ namespace legenda.Models
             Posts = new HashSet<Post>();
         }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string Firstname { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string Lastname { get; set; }
 
         [StringLength(500)]
         public string Biography { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string UserMail { get; set; }
 
         public int? ImageID { get; set; } 
-       
         
         public virtual ICollection<Post> Posts { get; set; }
         public virtual Image Image { get; set; }
-       // public virtual InitialUser InitialUser { get; set; }
-        //public virtual Jury Jury { get; set; }
 
     }
 }
