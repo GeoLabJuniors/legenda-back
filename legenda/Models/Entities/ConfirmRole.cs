@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace legenda.Models
+namespace legenda.Models.Entities
 {
     public class ConfirmRole
     {

@@ -5,6 +5,7 @@ namespace legenda.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using legenda.Models;
+    using legenda.Models.Entities;
     using Microsoft.AspNet.Identity.EntityFramework;
 
     internal sealed class Configuration : DbMigrationsConfiguration<legenda.Models.ApplicationDbContext>
@@ -17,12 +18,12 @@ namespace legenda.Migrations
 
         protected override void Seed(legenda.Models.ApplicationDbContext context)
         {
-            context.Contents.AddOrUpdate(
-                p=>p.Name,
-                new Content { Name = "About", Value ="About"},
-                new Content { Name="BrochurePath", Value="Brochure"},
-                new Content { Name="Competition", Value="Competition"},
-                new Content { Name="Contact", Value="Contact"}
+            context.StaticData.AddOrUpdate(
+                p=>p.KeyWord,
+                new StaticData { KeyWord = "About", Value ="About"},
+                new StaticData { KeyWord = "BrochurePath", Value="Brochure"},
+                new StaticData { KeyWord = "Competition", Value="Competition"},
+                new StaticData { KeyWord = "Contact", Value="Contact"}
                 );
 
             context.Roles.AddOrUpdate(

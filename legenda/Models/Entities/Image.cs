@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace legenda.Models
+namespace legenda.Models.Entities
 {
     public class Image
     {
         public int ID { get; set; }
         [Required]
         [StringLength(100)]
-        public string Path { get; set; }
+        public string ImageName { get; set; }
     }
 }

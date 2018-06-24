@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace legenda.Models
+namespace legenda.Models.Entities
 {
-    public class Content
+    public class StaticData
     {
         public int ID { get; set; }
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        public string KeyWord { get; set; }
         [Required]
         public string Value { get; set; }
     }

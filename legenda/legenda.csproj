@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -201,6 +202,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -222,18 +226,18 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\ConfirmRole.cs" />
-    <Compile Include="Models\Content.cs" />
+    <Compile Include="Models\Entities\ConfirmRole.cs" />
+    <Compile Include="Models\Entities\StaticData.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Image.cs" />
-    <Compile Include="Models\JuriesToSeasons.cs" />
+    <Compile Include="Models\Entities\Image.cs" />
+    <Compile Include="Models\Entities\JuriesToSeasons.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\Season.cs" />
-    <Compile Include="Models\Participant.cs" />
-    <Compile Include="Models\SeasonsToImages.cs" />
-    <Compile Include="Models\ParticipantsToSeasons.cs" />
-    <Compile Include="Models\Work.cs" />
+    <Compile Include="Models\Entities\Post.cs" />
+    <Compile Include="Models\Entities\Season.cs" />
+    <Compile Include="Models\Entities\Participant.cs" />
+    <Compile Include="Models\Entities\SeasonsToImages.cs" />
+    <Compile Include="Models\Entities\ParticipantsToSeasons.cs" />
+    <Compile Include="Models\Entities\Work.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -243,6 +247,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Content\css\bracket.css" />
+    <Content Include="Areas\Content\css\bracket.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -255,6 +262,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -306,7 +315,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\AdminBase\" />
     <Folder Include="Database\" />
+    <Folder Include="Models\View\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

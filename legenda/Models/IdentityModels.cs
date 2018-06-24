@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using legenda.Models.Entities;
 
 namespace legenda.Models
 {
@@ -34,7 +35,7 @@ namespace legenda.Models
         public DbSet<SeasonsToImages> SeasonsToImages { get; set; }
         public DbSet<Participant> Participants { get; set; }
         public DbSet<Work> Works { get; set; }
-        public DbSet<Content> Contents { get; set; }
+        public DbSet<StaticData> StaticData { get; set; }
         public DbSet<ConfirmRole> ConfirmRoles { get; set; }
         public DbSet<JuriesToSeasons> JuriesToSeasons { get; set; }
 

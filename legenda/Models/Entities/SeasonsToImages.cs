@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace legenda.Models
+namespace legenda.Models.Entities
 {
     public class SeasonsToImages
     {

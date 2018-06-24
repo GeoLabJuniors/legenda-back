@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using legenda.Models.Entities;
 
 namespace legenda.Models
 {
@@ -27,10 +28,11 @@ namespace legenda.Models
         [StringLength(100)]
         public string UserMail { get; set; }
 
-        public int? ImageID { get; set; } 
+        [StringLength(100)]
+        public string ProfileImageName { get; set; } 
         
         public virtual ICollection<Post> Posts { get; set; }
-        public virtual Image Image { get; set; }
+        //public virtual Image Image { get; set; }
 
     }
 }
