@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace legenda.Areas.Admin.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    //[Authorize(Roles ="Admin")]
     public class AdminBaseController : Controller
     {
        

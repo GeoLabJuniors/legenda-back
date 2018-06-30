@@ -12,7 +12,7 @@ namespace legenda.Models.Entities
         [Required]
         [StringLength(100)]
         public string KeyWord { get; set; }
-        [Required]
+        //[Required]
         public string Value { get; set; }
     }
 }

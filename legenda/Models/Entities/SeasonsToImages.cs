@@ -10,7 +10,7 @@ namespace legenda.Models.Entities
     public class SeasonsToImages
     {
         public int ID { get; set; }
-        public int SeasonID { get; set; }
+        public int? SeasonID { get; set; }
         public int ImageID { get; set; }
 
         public virtual Season Season { get; set; }

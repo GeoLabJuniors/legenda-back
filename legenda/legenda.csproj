@@ -211,18 +211,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806171847523_initialMigration.cs" />
-    <Compile Include="Migrations\201806171847523_initialMigration.Designer.cs">
-      <DependentUpon>201806171847523_initialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806182028077_initialMigrationEdit.cs" />
-    <Compile Include="Migrations\201806182028077_initialMigrationEdit.Designer.cs">
-      <DependentUpon>201806182028077_initialMigrationEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806182100442_removeModelsMigration.cs" />
-    <Compile Include="Migrations\201806182100442_removeModelsMigration.Designer.cs">
-      <DependentUpon>201806182100442_removeModelsMigration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -238,18 +226,22 @@
     <Compile Include="Models\Entities\SeasonsToImages.cs" />
     <Compile Include="Models\Entities\ParticipantsToSeasons.cs" />
     <Compile Include="Models\Entities\Work.cs" />
+    <Compile Include="Models\View\ContactVM.cs" />
+    <Compile Include="Models\View\MessageVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\StaticDataService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Content\css\bracket.css" />
     <Content Include="Areas\Content\css\bracket.min.css" />
+    <Content Include="Areas\Content\js\send_data.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -264,6 +256,7 @@
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Contact.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -317,8 +310,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\AdminBase\" />
+    <Folder Include="Areas\Content\js\lib\" />
     <Folder Include="Database\" />
-    <Folder Include="Models\View\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -330,15 +323,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806171847523_initialMigration.resx">
-      <DependentUpon>201806171847523_initialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806182028077_initialMigrationEdit.resx">
-      <DependentUpon>201806182028077_initialMigrationEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806182100442_removeModelsMigration.resx">
-      <DependentUpon>201806182100442_removeModelsMigration.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>

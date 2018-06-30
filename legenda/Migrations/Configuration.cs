@@ -18,23 +18,23 @@ namespace legenda.Migrations
 
         protected override void Seed(legenda.Models.ApplicationDbContext context)
         {
-            context.StaticData.AddOrUpdate(
-                p=>p.KeyWord,
-                new StaticData { KeyWord = "About", Value ="About"},
-                new StaticData { KeyWord = "BrochurePath", Value="Brochure"},
-                new StaticData { KeyWord = "Competition", Value="Competition"},
-                new StaticData { KeyWord = "Contact", Value="Contact"}
-                );
+            //context.StaticData.AddOrUpdate(
+            //    p=>p.KeyWord,
+            //    new StaticData { KeyWord = "About", Value ="About"},
+            //    new StaticData { KeyWord = "BrochurePath", Value="Brochure"},
+            //    new StaticData { KeyWord = "Competition", Value="Competition"},
+            //    new StaticData { KeyWord = "Contact", Value="Contact"}
+            //    );
 
-            context.Roles.AddOrUpdate(
-                p=>p.Name,
-                new IdentityRole { Name="Admin" },
-                new IdentityRole { Name="Jury"  },
-                new IdentityRole { Name="Moderator" },
-                new IdentityRole { Name="User" }
-                );
+            //context.Roles.AddOrUpdate(
+            //    p=>p.Name,
+            //    new IdentityRole { Name="Admin" },
+            //    new IdentityRole { Name="Jury"  },
+            //    new IdentityRole { Name="Moderator" },
+            //    new IdentityRole { Name="User" }
+            //    );
 
-            context.SaveChanges();
+            //context.SaveChanges();
         }
     }
 }
