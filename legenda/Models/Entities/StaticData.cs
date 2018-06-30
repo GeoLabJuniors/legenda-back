@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace legenda.Models.Entities
 {
@@ -13,6 +14,7 @@ namespace legenda.Models.Entities
         [StringLength(100)]
         public string KeyWord { get; set; }
         //[Required]
+        [AllowHtml]
         public string Value { get; set; }
     }
 }

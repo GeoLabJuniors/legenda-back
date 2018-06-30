@@ -204,7 +204,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
-    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StaticDataController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -226,6 +226,7 @@
     <Compile Include="Models\Entities\SeasonsToImages.cs" />
     <Compile Include="Models\Entities\ParticipantsToSeasons.cs" />
     <Compile Include="Models\Entities\Work.cs" />
+    <Compile Include="Models\View\AboutVM.cs" />
     <Compile Include="Models\View\ContactVM.cs" />
     <Compile Include="Models\View\MessageVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -238,7 +239,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\StaticData\Index.cshtml" />
     <Content Include="Areas\Content\css\bracket.css" />
     <Content Include="Areas\Content\css\bracket.min.css" />
     <Content Include="Areas\Content\js\send_data.js" />
@@ -256,7 +257,7 @@
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Contact.cshtml" />
+    <Content Include="Areas\Admin\Views\StaticData\Contact.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

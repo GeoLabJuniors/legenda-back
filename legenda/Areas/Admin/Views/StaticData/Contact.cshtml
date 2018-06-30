@@ -7,7 +7,7 @@
 
 <h2>Contact</h2>
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new { data_url = "/admin/admin/contact/" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { data_url = "/admin/staticdata/contact/" }))
 {
     @Html.AntiForgeryToken()
     
@@ -47,36 +47,40 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="button" value="Create" class="btn btn-default js-form-submit" />
+                <input type="button" value="Update" class="btn btn-default js-form-submit" />
             </div>
         </div>
     </div>
 }
 
 
+<h2>About</h2>
 
-
-@using (Html.BeginForm(null, null, FormMethod.Post, new { data_url = "/admin/admin/about/" }))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { data_url = "/admin/staticdata/about/" }))
 {
     <div class="form-horizontal">
         <div class="form-group">
             <div class="col-md-10">
-                <input name="AboutTitle" value="@ViewBag.AboutTitle" class="form-control" />
+                <label>Title</label>
+                <input name="Title" value="@ViewBag.About.Title" class="form-control" />
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-10">
-                <input name="AboutDescription" value="@ViewBag.AboutDesc" class="form-control" />
+                <label>Description</label>
+                <textarea id="about_description" name="Description" class="form-control">@ViewBag.About.Description</textarea>
+                @*<input name="Description" value="@ViewBag.About.Description" class="form-control" />*@
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="button" value="Create" class="btn btn-default js-form-submit" />
+                <input type="button" value="Update" class="btn btn-default js-form-submit" />
             </div>
         </div>
     </div>
 }
+<script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="~/Areas/Content/js/send_data.js"></script>
 <script>
@@ -86,7 +90,10 @@
         //form.valid() &&
         if (url.trim() !== "") {
             var formData = new FormData(form.get(0));
+            formData.set("Description", CKEDITOR.instances.about_description.getData());
             SendData(url, formData);
         }
     });
+
+    CKEDITOR.replace('about_description');
 </script>

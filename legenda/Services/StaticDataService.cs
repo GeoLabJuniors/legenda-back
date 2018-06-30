@@ -51,7 +51,7 @@ namespace legenda.Services
             return contact;
         }
 
-        public MessageVM UpdateAbout(string AboutTitle, string AboutDescription)
+        public MessageVM UpdateAbout(AboutVM about)
         {
             var message = new MessageVM
             {
@@ -60,8 +60,8 @@ namespace legenda.Services
                 Success = true,
             };
 
-            var aboutTitle = InsertStaticData("AboutTitle", AboutTitle);
-            var aboutDescription = InsertStaticData("AboutDescription", AboutDescription);
+            var aboutTitle = InsertStaticData("AboutTitle", about.Title);
+            var aboutDescription = InsertStaticData("AboutDescription", about.Description);
 
             if (!aboutTitle && !aboutDescription)
             {
@@ -72,13 +72,13 @@ namespace legenda.Services
             return message;
         }
 
-        public List<string> GetAbout()
+        public AboutVM GetAbout()
         {
-
             var AboutTitle = db.StaticData.Where(x => x.KeyWord == "AboutTitle").FirstOrDefault()?.Value;
             var AboutDescription = db.StaticData.Where(x => x.KeyWord == "AboutDescription").FirstOrDefault()?.Value;
-            return new List<string> { AboutTitle, AboutDescription };
+            return new AboutVM { Title=AboutTitle, Description=AboutDescription };
         }
+
         private bool InsertStaticData(string key, string value)
         {
 

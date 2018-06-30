@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace legenda.Areas.Admin.Controllers
 {
-    public class AdminController : AdminBaseController
+    public class StaticDataController : AdminBaseController
     {
         public StaticDataService staticDataService = new StaticDataService();
         // GET: Admin/Admin
@@ -20,8 +20,7 @@ namespace legenda.Areas.Admin.Controllers
         public ActionResult Contact()
         {
             var about = staticDataService.GetAbout();
-            ViewBag.AboutTitle = about[0];
-            ViewBag.AboutDesc = about[1];
+            ViewBag.About = about;
             return View(staticDataService.GetContact());
         }
 
@@ -38,11 +37,11 @@ namespace legenda.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public JsonResult About(string AboutTitle,string AboutDescription)
+        public JsonResult About(AboutVM model)
         {
             if (ModelState.IsValid)
             {
-                var message = staticDataService.UpdateAbout(AboutTitle, AboutDescription);
+                var message = staticDataService.UpdateAbout(model);
                 return Json(message);
 
             }
